@@ -1,0 +1,112 @@
+{
+  "scenario": "tool_call_compat_traverser",
+  "latest_trace_id": "0183ceaafb023000f24e95a88c13d1b3",
+  "history_keys": [
+    "0183ceaafb023000f24e95a88c13d1b3"
+  ],
+  "traces": {
+    "0183ceaafb023000f24e95a88c13d1b3": {
+      "trace_id": "0183ceaafb023000f24e95a88c13d1b3",
+      "request_context": {
+        "model": "qwen-3.8-27b",
+        "provider": "cerebras",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Call the 'query_ledger_balance' tool to check the balance for tenant_id 'accounting_dept'."
+          }
+        ],
+        "parameters": {
+          "temperature": null,
+          "max_tokens": null,
+          "stream": false
+        }
+      },
+      "network_metrics": {
+        "ttfb_ms": 354.56,
+        "total_duration_ms": 354.56
+      },
+      "response_timeline": [
+        {
+          "delta_ms": 0,
+          "chunk": "\n\n",
+          "tool_calls": [
+            {
+              "id": "e3574cf28",
+              "type": "function",
+              "function": {
+                "name": "query_ledger_balance",
+                "arguments": "{\"tenant_id\": \"accounting_dept\"}"
+              }
+            }
+          ],
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "exception_boundary": {
+        "occurred": false
+      },
+      "raw_payload": {
+        "sync_response": {
+          "id": "chatcmpl-ef08abfd-3938-4480-b49d-a1bfb61a9f82",
+          "choices": [
+            {
+              "finish_reason": "tool_calls",
+              "index": 0,
+              "message": {
+                "content": "\n\n",
+                "reasoning": "The user is asking me to call query_ledger_balance with tenant_id 'accounting_dept'.\n",
+                "tool_calls": [
+                  {
+                    "function": {
+                      "name": "query_ledger_balance",
+                      "arguments": "{\"tenant_id\": \"accounting_dept\"}"
+                    },
+                    "type": "function",
+                    "id": "e3574cf28"
+                  }
+                ],
+                "role": "assistant"
+              }
+            }
+          ],
+          "created": 1793250907,
+          "model": "qwen-3.8-27b",
+          "system_fingerprint": "fp_2642a45f2f6e92f79b49",
+          "object": "chat.completion",
+          "usage": {
+            "total_tokens": 403,
+            "completion_tokens": 53,
+            "completion_tokens_details": {
+              "reasoning_tokens": 21
+            },
+            "prompt_tokens": 350,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "image_tokens": 0
+            }
+          },
+          "time_info": {
+            "created": 1793250907.3076217,
+            "queue_time": 0.002546752999999999,
+            "prompt_time": 0.010495837,
+            "completion_time": 0.047845274,
+            "total_time": 0.06257820129394531
+          }
+        }
+      },
+      "usage": {
+        "total_tokens": 403,
+        "completion_tokens": 53,
+        "completion_tokens_details": {
+          "reasoning_tokens": 21
+        },
+        "prompt_tokens": 350,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 0
+        }
+      }
+    }
+  }
+}

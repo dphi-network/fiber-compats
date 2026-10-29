@@ -1,12 +1,12 @@
 {
   "scenario": "sync_declarative_rule",
-  "latest_trace_id": "01724e07594230026ee17bd7afce4ef3",
+  "latest_trace_id": "0183c85f1e8230004a9554961b51557a",
   "history_keys": [
-    "01724e07594230026ee17bd7afce4ef3"
+    "0183c85f1e8230004a9554961b51557a"
   ],
   "traces": {
-    "01724e07594230026ee17bd7afce4ef3": {
-      "trace_id": "01724e07594230026ee17bd7afce4ef3",
+    "0183c85f1e8230004a9554961b51557a": {
+      "trace_id": "0183c85f1e8230004a9554961b51557a",
       "request_context": {
         "model": "gemma-3-1b-it-Q4_K_M.gguf",
         "provider": "llama_server",
@@ -23,57 +23,14 @@
         }
       },
       "network_metrics": {
-        "ttfb_ms": 361.00124998483807,
-        "total_duration_ms": 361.00124998483807
+        "ttfb_ms": 0.0,
+        "total_duration_ms": 1.34
       },
-      "response_timeline": [
-        {
-          "delta_ms": 0,
-          "chunk": "External declarative JSON rulesets offer greater flexibility, maintainability, and scalability compared to hardcoding Python parsing logic for LLM providers."
-        }
-      ],
+      "response_timeline": [],
       "exception_boundary": {
-        "occurred": false
-      },
-      "raw_payload": {
-        "sync_response": {
-          "choices": [
-            {
-              "finish_reason": "stop",
-              "index": 0,
-              "message": {
-                "role": "assistant",
-                "content": "External declarative JSON rulesets offer greater flexibility, maintainability, and scalability compared to hardcoding Python parsing logic for LLM providers."
-              }
-            }
-          ],
-          "created": 1792076334,
-          "model": "ggml-org/gemma-3-1b-it-GGUF",
-          "system_fingerprint": "b7560-f8d561eb8",
-          "object": "chat.completion",
-          "usage": {
-            "completion_tokens": 27,
-            "prompt_tokens": 40,
-            "total_tokens": 67
-          },
-          "id": "chatcmpl-LPAMJAEacLjhTSJLNnXuM2tIXoidNxAP",
-          "timings": {
-            "cache_n": 39,
-            "prompt_n": 1,
-            "prompt_ms": 3.022,
-            "prompt_per_token_ms": 3.022,
-            "prompt_per_second": 330.9066843150232,
-            "predicted_n": 27,
-            "predicted_ms": 339.78,
-            "predicted_per_token_ms": 12.584444444444443,
-            "predicted_per_second": 79.46318205897934
-          }
-        }
-      },
-      "usage": {
-        "completion_tokens": 27,
-        "prompt_tokens": 40,
-        "total_tokens": 67
+        "occurred": true,
+        "error_type": "ConnectError",
+        "message": "All connection attempts failed"
       }
     }
   }

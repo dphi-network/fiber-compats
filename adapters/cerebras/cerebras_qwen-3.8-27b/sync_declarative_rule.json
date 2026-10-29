@@ -1,8 +1,12 @@
 {
   "scenario": "sync_declarative_rule",
-  "latest_trace_id": "0172402affc230025f7ee855f38172fa",
+  "latest_trace_id": "0183ceaa6c023000de9826adb4b8c3a3",
   "history_keys": [
-    "0172402affc230025f7ee855f38172fa"
+    "0172402affc230025f7ee855f38172fa",
+    "0183c88d1942300092ca85de0bbf48bd",
+    "0183c9a043c23002d0f75c046f8b1384",
+    "0183ce90e74230002fd9cbf7752d8b85",
+    "0183ceaa6c023000de9826adb4b8c3a3"
   ],
   "traces": {
     "0172402affc230025f7ee855f38172fa": {
@@ -79,6 +83,334 @@
         "completion_tokens": 147,
         "completion_tokens_details": {
           "reasoning_tokens": 118
+        },
+        "prompt_tokens": 84,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 0
+        }
+      }
+    },
+    "0183c88d1942300092ca85de0bbf48bd": {
+      "trace_id": "0183c88d1942300092ca85de0bbf48bd",
+      "request_context": {
+        "model": "qwen-3.8-27b",
+        "provider": "cerebras",
+        "messages": [
+          {
+            "role": "user",
+            "content": "In one concise sentence, what is the primary architectural benefit of using external declarative JSON rulesets instead of hardcoding Python parsing logic for new LLM providers?"
+          }
+        ],
+        "parameters": {
+          "temperature": null,
+          "max_tokens": null,
+          "stream": false
+        }
+      },
+      "network_metrics": {
+        "ttfb_ms": 373.89,
+        "total_duration_ms": 373.89
+      },
+      "response_timeline": [
+        {
+          "delta_ms": 0,
+          "chunk": "\n\nIt decouples provider-specific parsing behavior from application code, enabling new LLM providers to be supported through declarative configuration changes rather than code changes and redeployment."
+        }
+      ],
+      "exception_boundary": {
+        "occurred": false
+      },
+      "raw_payload": {
+        "sync_response": {
+          "id": "chatcmpl-46ce54f8-3d52-488d-99d5-00b12bea94e3",
+          "choices": [
+            {
+              "finish_reason": "stop",
+              "index": 0,
+              "message": {
+                "content": "\n\nIt decouples provider-specific parsing behavior from application code, enabling new LLM providers to be supported through declarative configuration changes rather than code changes and redeployment.",
+                "reasoning": "We need answer user: \"In one concise sentence, what is the primary architectural benefit of using external declarative JSON rulesets instead of hardcoding Python parsing logic for new LLM providers?\" Need produce concise sentence. done. Need final one sentence.\nKey: external declarative JSON rulesets allow adding/adapting new LLM providers by updating config data, not code, improving extensibility/maintainability, separation of concerns, no redeployment. Need one sentence.\n",
+                "role": "assistant"
+              }
+            }
+          ],
+          "created": 1793249303,
+          "model": "qwen-3.8-27b",
+          "system_fingerprint": "fp_2642a45f2f6e92f79b49",
+          "object": "chat.completion",
+          "usage": {
+            "total_tokens": 217,
+            "completion_tokens": 133,
+            "completion_tokens_details": {
+              "reasoning_tokens": 99
+            },
+            "prompt_tokens": 84,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "image_tokens": 0
+            }
+          },
+          "time_info": {
+            "created": 1793249303.9160526,
+            "queue_time": 0.0006394000000000122,
+            "prompt_time": 0.002783238,
+            "completion_time": 0.090423142,
+            "total_time": 0.09566688537597656
+          }
+        }
+      },
+      "usage": {
+        "total_tokens": 217,
+        "completion_tokens": 133,
+        "completion_tokens_details": {
+          "reasoning_tokens": 99
+        },
+        "prompt_tokens": 84,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 0
+        }
+      }
+    },
+    "0183c9a043c23002d0f75c046f8b1384": {
+      "trace_id": "0183c9a043c23002d0f75c046f8b1384",
+      "request_context": {
+        "model": "qwen-3.8-27b",
+        "provider": "cerebras",
+        "messages": [
+          {
+            "role": "user",
+            "content": "In one concise sentence, what is the primary architectural benefit of using external declarative JSON rulesets instead of hardcoding Python parsing logic for new LLM providers?"
+          }
+        ],
+        "parameters": {
+          "temperature": null,
+          "max_tokens": null,
+          "stream": false
+        }
+      },
+      "network_metrics": {
+        "ttfb_ms": 433.65,
+        "total_duration_ms": 433.65
+      },
+      "response_timeline": [
+        {
+          "delta_ms": 0,
+          "chunk": "\n\nExternal declarative JSON rulesets make provider support configuration-driven rather than code-bound, allowing new LLM providers to be added without modifying or redeploying Python parsing logic."
+        }
+      ],
+      "exception_boundary": {
+        "occurred": false
+      },
+      "raw_payload": {
+        "sync_response": {
+          "id": "chatcmpl-8963341b-863d-4645-affa-a90284f6c1f0",
+          "choices": [
+            {
+              "finish_reason": "stop",
+              "index": 0,
+              "message": {
+                "content": "\n\nExternal declarative JSON rulesets make provider support configuration-driven rather than code-bound, allowing new LLM providers to be added without modifying or redeploying Python parsing logic.",
+                "reasoning": "We need answer user's request: \"In one concise sentence, what is the primary architectural benefit of using external declarative JSON rulesets instead of hardcoding Python parsing logic for new LLM providers?\" Need produce one concise sentence. Need likely answer: adding/supporting new providers requires configuration not code changes, improving extensibility/maintainability. Ensure one sentence.\nFinal: \"External declarative JSON rulesets make provider support configurable rather than code-bound, so new LLM providers can be added without modifying or redeploying Python parsing logic.\" One sentence.\n",
+                "role": "assistant"
+              }
+            }
+          ],
+          "created": 1793249585,
+          "model": "qwen-3.8-27b",
+          "system_fingerprint": "fp_2642a45f2f6e92f79b49",
+          "object": "chat.completion",
+          "usage": {
+            "total_tokens": 236,
+            "completion_tokens": 152,
+            "completion_tokens_details": {
+              "reasoning_tokens": 116
+            },
+            "prompt_tokens": 84,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "image_tokens": 0
+            }
+          },
+          "time_info": {
+            "created": 1793249585.6849194,
+            "queue_time": 0.064182754,
+            "prompt_time": 0.0033593580000000002,
+            "completion_time": 0.097140202,
+            "total_time": 0.16649198532104492
+          }
+        }
+      },
+      "usage": {
+        "total_tokens": 236,
+        "completion_tokens": 152,
+        "completion_tokens_details": {
+          "reasoning_tokens": 116
+        },
+        "prompt_tokens": 84,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 0
+        }
+      }
+    },
+    "0183ce90e74230002fd9cbf7752d8b85": {
+      "trace_id": "0183ce90e74230002fd9cbf7752d8b85",
+      "request_context": {
+        "model": "qwen-3.8-27b",
+        "provider": "cerebras",
+        "messages": [
+          {
+            "role": "user",
+            "content": "In one concise sentence, what is the primary architectural benefit of using external declarative JSON rulesets instead of hardcoding Python parsing logic for new LLM providers?"
+          }
+        ],
+        "parameters": {
+          "temperature": null,
+          "max_tokens": null,
+          "stream": false
+        }
+      },
+      "network_metrics": {
+        "ttfb_ms": 374.64,
+        "total_duration_ms": 374.64
+      },
+      "response_timeline": [
+        {
+          "delta_ms": 0,
+          "chunk": "\n\nIt decouples provider-specific parsing behavior from application code, so new LLM providers can be added or updated by changing configuration rather than modifying and redeploying Python logic."
+        }
+      ],
+      "exception_boundary": {
+        "occurred": false
+      },
+      "raw_payload": {
+        "sync_response": {
+          "id": "chatcmpl-80115a07-f6c5-4d4d-9799-46317d0e89e8",
+          "choices": [
+            {
+              "finish_reason": "stop",
+              "index": 0,
+              "message": {
+                "content": "\n\nIt decouples provider-specific parsing behavior from application code, so new LLM providers can be added or updated by changing configuration rather than modifying and redeploying Python logic.",
+                "reasoning": "We need answer user: \"In one concise sentence, what is the primary architectural benefit of using external declarative JSON rulesets instead of hardcoding Python parsing logic for new LLM providers?\"\n\nNeed produce one concise sentence. Need final only one sentence. Need likely answer: decoupling provider-specific parsing config from application code, enabling adding/updating providers without code changes/redeployment, improving extens/maintainability. Ensure one sentence.\n",
+                "role": "assistant"
+              }
+            }
+          ],
+          "created": 1793250880,
+          "model": "qwen-3.8-27b",
+          "system_fingerprint": "fp_2642a45f2f6e92f79b49",
+          "object": "chat.completion",
+          "usage": {
+            "total_tokens": 211,
+            "completion_tokens": 127,
+            "completion_tokens_details": {
+              "reasoning_tokens": 91
+            },
+            "prompt_tokens": 84,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "image_tokens": 0
+            }
+          },
+          "time_info": {
+            "created": 1793250880.5962145,
+            "queue_time": 0.00021290000000000198,
+            "prompt_time": 0.005363194,
+            "completion_time": 0.082612163,
+            "total_time": 0.08996295928955078
+          }
+        }
+      },
+      "usage": {
+        "total_tokens": 211,
+        "completion_tokens": 127,
+        "completion_tokens_details": {
+          "reasoning_tokens": 91
+        },
+        "prompt_tokens": 84,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 0
+        }
+      }
+    },
+    "0183ceaa6c023000de9826adb4b8c3a3": {
+      "trace_id": "0183ceaa6c023000de9826adb4b8c3a3",
+      "request_context": {
+        "model": "qwen-3.8-27b",
+        "provider": "cerebras",
+        "messages": [
+          {
+            "role": "user",
+            "content": "In one concise sentence, what is the primary architectural benefit of using external declarative JSON rulesets instead of hardcoding Python parsing logic for new LLM providers?"
+          }
+        ],
+        "parameters": {
+          "temperature": null,
+          "max_tokens": null,
+          "stream": false
+        }
+      },
+      "network_metrics": {
+        "ttfb_ms": 335.45,
+        "total_duration_ms": 335.45
+      },
+      "response_timeline": [
+        {
+          "delta_ms": 0,
+          "chunk": "\n\nIt decouples provider-specific parsing from application code, enabling new LLM providers to be supported by adding or updating JSON rules instead of modifying and redeploying Python logic."
+        }
+      ],
+      "exception_boundary": {
+        "occurred": false
+      },
+      "raw_payload": {
+        "sync_response": {
+          "id": "chatcmpl-a78b9121-b0f5-4668-974a-d3e45b628e7d",
+          "choices": [
+            {
+              "finish_reason": "stop",
+              "index": 0,
+              "message": {
+                "content": "\n\nIt decouples provider-specific parsing from application code, enabling new LLM providers to be supported by adding or updating JSON rules instead of modifying and redeploying Python logic.",
+                "reasoning": "We need answer user: \"In one concise sentence, what is the primary architectural benefit of using external declarative JSON rulesets instead of hardcoding Python parsing logic for new LLM providers?\" Need one concise sentence. We did. Final sentence.\n",
+                "role": "assistant"
+              }
+            }
+          ],
+          "created": 1793250906,
+          "model": "qwen-3.8-27b",
+          "system_fingerprint": "fp_2642a45f2f6e92f79b49",
+          "object": "chat.completion",
+          "usage": {
+            "total_tokens": 171,
+            "completion_tokens": 87,
+            "completion_tokens_details": {
+              "reasoning_tokens": 51
+            },
+            "prompt_tokens": 84,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "image_tokens": 0
+            }
+          },
+          "time_info": {
+            "created": 1793250906.7682033,
+            "queue_time": 0.00016921199999999498,
+            "prompt_time": 0.003831855,
+            "completion_time": 0.051178687,
+            "total_time": 0.057004690170288086
+          }
+        }
+      },
+      "usage": {
+        "total_tokens": 171,
+        "completion_tokens": 87,
+        "completion_tokens_details": {
+          "reasoning_tokens": 51
         },
         "prompt_tokens": 84,
         "prompt_tokens_details": {
