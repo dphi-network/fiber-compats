@@ -1,0 +1,61 @@
+{
+  "Version": "1.0",
+  "StartAt": "Prepare_Lock",
+  "States": {
+    "Prepare_Lock": {
+      "Type": "Task",
+      "Resource": "fn://prepare_mapping_context",
+      "Parameters": {
+        "record.$": "$.raw_record",
+        "target_domain.$": "$.target_domain",
+        "__fiber_extensions": {
+          "Projection": {
+            "offload_path": "$.topology_lock",
+            "extract_keys": ["$.record_id", "$.llm_prompt"]
+          }
+        }
+      },
+      "Next": "Synthesize_LLM"
+    },
+    "Synthesize_LLM": {
+      "Type": "Task",
+      "Resource": "llm://auto",
+      "Parameters": {
+        "model.$": "$.model",
+        "prompt.$": "$.llm_prompt",
+        "temperature": 0.2,
+        "__fiber_extensions": {
+          "Projection": {
+            "offload_path": "$.raw_stream_payload",
+            "extract_keys": ["$.node_updates"]
+          }
+        }
+      },
+      "Next": "Bind_And_Verify",
+      "Catch": "Fail_Act"
+    },
+    "Bind_And_Verify": {
+      "Type": "Task",
+      "Resource": "fn://bind_and_verify",
+      "Parameters": {
+        "record.$": "$.raw_record",
+        "node_updates.$": "$.node_updates",
+        "output_path.$": "$.output_path",
+        "__fiber_extensions": {
+          "Projection": {
+            "offload_path": "$.mapped_record",
+            "extract_keys": ["$._score", "$.root_hash", "$.total_root_bytes"]
+          }
+        }
+      },
+      "Next": "Verify_Gate"
+    },
+    "Verify_Gate": {
+      "Type": "Choice",
+      "Choices": [{"if": "$._score >= 0.95", "Next": "Final_Act"}],
+      "Default": "Fail_Act"
+    },
+    "Fail_Act": {"Type": "Fail"},
+    "Final_Act": {"Type": "Succeed"}
+  }
+}

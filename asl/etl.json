@@ -1,0 +1,75 @@
+{
+  "Version": "1.0",
+  "StartAt": "Stage1_Hermes",
+  "States": {
+    "Stage1_Hermes": {
+      "Type": "Task",
+      "Resource": "py://fiber.phase.fsm.dataset.extract:extract_dataset",
+      "Parameters": {
+        "source": "hermes",
+        "tag": "hermes",
+        "quota.$": "$.q_hermes",
+        "output_dir.$": "$.output_dir",
+        "__fiber_extensions": {
+          "Projection": {
+            "offload_path": "$.shard",
+            "extract_keys": ["$.hermes_count"]
+          },
+          "allow_parallel": true
+        }
+      },
+      "Next": ["Branch_XLAM", "Branch_TB_DAG", "Branch_TB_Chain"]
+    },
+    "Branch_XLAM": {
+      "Type": "Task",
+      "Resource": "fn://extract_dataset",
+      "Parameters": {
+        "source": "xlam",
+        "tag": "xlam",
+        "quota.$": "$.q_xlam",
+        "output_dir.$": "$.output_dir"
+      },
+      "Next": "Join_Verify",
+      "Catch": "Join_Verify"
+    },
+    "Branch_TB_DAG": {
+      "Type": "Task",
+      "Resource": "fn://extract_dataset",
+      "Parameters": {
+        "source": "taskbench",
+        "tag": "tb_dag",
+        "dag_only": true,
+        "quota.$": "$.q_tb_dag",
+        "output_dir.$": "$.output_dir"
+      },
+      "Next": "Join_Verify",
+      "Catch": "Join_Verify"
+    },
+    "Branch_TB_Chain": {
+      "Type": "Task",
+      "Resource": "fn://extract_dataset",
+      "Parameters": {
+        "source": "taskbench",
+        "tag": "tb_chain",
+        "dag_only": false,
+        "quota.$": "$.q_tb_chain",
+        "output_dir.$": "$.output_dir"
+      },
+      "Next": "Join_Verify",
+      "Catch": "Join_Verify"
+    },
+    "Join_Verify": {
+      "Type": "Choice",
+      "Choices": [{"if": "$._score >= 0.90", "Next": "Package_Tiers"}],
+      "Default": "Fail_Act"
+    },
+    "Package_Tiers": {
+      "Type": "Task",
+      "Resource": "fn://package_tiers",
+      "Parameters": {"output_dir.$": "$.output_dir"},
+      "Next": "Final_Act"
+    },
+    "Fail_Act": {"Type": "Fail"},
+    "Final_Act": {"Type": "Succeed"}
+  }
+}
