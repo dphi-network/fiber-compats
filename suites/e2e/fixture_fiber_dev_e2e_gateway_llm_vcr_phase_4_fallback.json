@@ -1,0 +1,52 @@
+{
+  "scenario": "phase_4_fallback",
+  "latest_trace_id": "4b0491ab6be44bec0322b493d6915f1c",
+  "history_keys": [
+    "4b0491ab6be44bec0322b493d6915f1c"
+  ],
+  "traces": {
+    "4b0491ab6be44bec0322b493d6915f1c": {
+      "trace_id": "4b0491ab6be44bec0322b493d6915f1c",
+      "request_context": {
+        "model": "qwen-3.8-27b",
+        "provider": "cerebras",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Fallback test via VCR"
+          }
+        ],
+        "parameters": {
+          "temperature": null,
+          "max_tokens": null,
+          "stream": false
+        }
+      },
+      "network_metrics": {
+        "ttfb_ms": 365.0,
+        "total_duration_ms": 365.0
+      },
+      "response_timeline": [
+        {
+          "delta_ms": 0,
+          "chunk": "\n\nFallback test received via VCR. System operating normally."
+        }
+      ],
+      "exception_boundary": {
+        "occurred": false
+      },
+      "usage": {
+        "total_tokens": 159,
+        "completion_tokens": 102,
+        "completion_tokens_details": {
+          "reasoning_tokens": 89
+        },
+        "prompt_tokens": 57,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 0
+        }
+      }
+    }
+  }
+}

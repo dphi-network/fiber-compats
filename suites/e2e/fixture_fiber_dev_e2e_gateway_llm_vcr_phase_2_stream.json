@@ -1,0 +1,78 @@
+{
+  "scenario": "phase_2_stream",
+  "latest_trace_id": "7c7f8484931fcf7d543d6ace63f8ca7d",
+  "history_keys": [
+    "7c7f8484931fcf7d543d6ace63f8ca7d"
+  ],
+  "traces": {
+    "7c7f8484931fcf7d543d6ace63f8ca7d": {
+      "trace_id": "7c7f8484931fcf7d543d6ace63f8ca7d",
+      "request_context": {
+        "model": "qwen-3.8-27b",
+        "provider": "cerebras",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Please write a detailed, 3-paragraph explanation about how VCR (Video Cassette Recorder) technology works, including its history and mechanical components. This is for testing a streaming chunk accumulation."
+          }
+        ],
+        "parameters": {
+          "temperature": null,
+          "max_tokens": null,
+          "stream": true
+        }
+      },
+      "network_metrics": {
+        "ttfb_ms": 271.4426249731332,
+        "total_duration_ms": 1229.07
+      },
+      "response_timeline": [
+        {
+          "delta_ms": 164.91895797662437,
+          "chunk": "\n\nThe"
+        },
+        {
+          "delta_ms": 104.74654193967581,
+          "chunk": " VCR, or Video Cassette Recorder, emerged in the early 1970s as a way to record and play back analog television broadcasts on magnetic tape. Professional use came first: Sony introduced U-matic in 1967, and in 1971 JVC released the VR-2350, the first consumer VCR, designed to record programs over several hours onto a standard cassette shell. The technology reached mass popularity in the late 1970s when two competing home formats appeared: Sony’s Betamax and JVC’s VHS. VHS eventually became the dominant format because it offered longer recording times per cassette and a broader ecosystem of licensed manufacturers. For the first time, ordinary households could record live TV, create personal libraries, pause live broadcasts, and transfer tapes to friends, transforming television from a purely live medium into a recorded and rewound experience.\n\nA VCR works by recording the television signal onto an oxide-coated magnetic tape contained in a cassette. The video signal is not stored as a simple audio waveform; instead, it is converted into a frequency-modulated or pulse-coded signal suitable for magnetic recording. Inside the machine, a rotating head drum carries small video heads that sweep across the moving tape in short diagonal paths, recording narrow bands of video called trans"
+        },
+        {
+          "delta_ms": 100.08854104671627,
+          "chunk": "verse tracks. This spinning-head technique allows the limited speed of the tape to carry a high-frequency video signal without the wobble and distortion that would occur with a simple linear tape path. The audio is usually recorded in parallel on a separate linear audio track, while a control track is written alongside the video area to provide timing information for correct playback speed, tape positioning, and tracking. During playback, the same rotating heads pick up the magnetic patterns, the machine converts them back into a television signal, and the user can watch the recording through a"
+        },
+        {
+          "delta_ms": 100.40925000794232,
+          "chunk": " TV set connected to the VCR.\n\nMechanically, the VCR is a precision machine built around a controlled tape path and a set of moving parts that must work together smoothly. The cassette is loaded into the machine, where the tape is threaded over guides, a capstan, a pinch roller, and the head assembly. The capstan, a small toothed roller, drives the tape forward at a constant linear speed while the pinch roller holds the tape firmly against it; this combination gives the machine precise control over tape speed. The head drum contains the video heads and spins"
+        },
+        {
+          "delta_ms": 109.48104201816022,
+          "chunk": " rapidly to lay down or read across the tape, while an audio head and control-track head handle their respective signals. Additional mechanical components include reel motors that wind and unwind the tape, idler rollers that maintain proper tape tension, a take-up spool and supply spool, a head-cleaning mechanism, tape guides that direct the tape to the correct path, and a tracking adjuster that fine-tunes the playback signal to overcome tape misalignment. With repeated use, these parts can wear"
+        },
+        {
+          "delta_ms": 52.66049993224442,
+          "chunk": ": belts can stretch, capstans can slip, heads can wear down, and tapes can become loose or stretched, which is why older VCRs often needed periodic tracking adjustments, head cleaning, or mechanical service.",
+          "finish_reason": "stop"
+        },
+        {
+          "delta_ms": 7.059499970637262,
+          "chunk": "",
+          "finish_reason": "stop"
+        }
+      ],
+      "exception_boundary": {
+        "occurred": false
+      },
+      "usage": {
+        "total_tokens": 1112,
+        "completion_tokens": 1021,
+        "completion_tokens_details": {
+          "reasoning_tokens": 384
+        },
+        "prompt_tokens": 91,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 0
+        }
+      }
+    }
+  }
+}

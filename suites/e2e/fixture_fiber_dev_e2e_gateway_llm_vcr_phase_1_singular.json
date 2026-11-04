@@ -1,0 +1,52 @@
+{
+  "scenario": "phase_1_singular",
+  "latest_trace_id": "9b38cf616e81494f197f6af39bcf23ee",
+  "history_keys": [
+    "9b38cf616e81494f197f6af39bcf23ee"
+  ],
+  "traces": {
+    "9b38cf616e81494f197f6af39bcf23ee": {
+      "trace_id": "9b38cf616e81494f197f6af39bcf23ee",
+      "request_context": {
+        "model": "qwen-3.8-27b",
+        "provider": "cerebras",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Hello, VCR."
+          }
+        ],
+        "parameters": {
+          "temperature": null,
+          "max_tokens": null,
+          "stream": false
+        }
+      },
+      "network_metrics": {
+        "ttfb_ms": 1334.49,
+        "total_duration_ms": 1334.49
+      },
+      "response_timeline": [
+        {
+          "delta_ms": 0,
+          "chunk": "\n\nHello! I'm actually Qwen, a large language model developed by Alibaba Group. How can I help you today?"
+        }
+      ],
+      "exception_boundary": {
+        "occurred": false
+      },
+      "usage": {
+        "total_tokens": 506,
+        "completion_tokens": 449,
+        "completion_tokens_details": {
+          "reasoning_tokens": 423
+        },
+        "prompt_tokens": 57,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 0
+        }
+      }
+    }
+  }
+}
