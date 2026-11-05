@@ -1,0 +1,96 @@
+{
+  "scenario": "tool_call_compat_traverser",
+  "latest_trace_id": "018c9dc75a8250004227c0f29e74df21",
+  "history_keys": [
+    "018c9dc75a8250004227c0f29e74df21"
+  ],
+  "traces": {
+    "018c9dc75a8250004227c0f29e74df21": {
+      "trace_id": "018c9dc75a8250004227c0f29e74df21",
+      "request_context": {
+        "model": "claude-haiku-4-5-20251001",
+        "provider": "anthropic",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Call the 'query_ledger_balance' tool to check the balance for tenant_id 'accounting_dept'."
+          }
+        ],
+        "parameters": {
+          "temperature": null,
+          "max_tokens": null,
+          "stream": false
+        }
+      },
+      "network_metrics": {
+        "ttfb_ms": 1009.99,
+        "total_duration_ms": 1009.99
+      },
+      "response_timeline": [
+        {
+          "delta_ms": 0,
+          "chunk": "",
+          "tool_calls": [
+            {
+              "id": "call_018c9dc8",
+              "type": "function",
+              "function": {
+                "name": "query_ledger_balance",
+                "arguments": "{\"tenant_id\": \"accounting_dept\"}"
+              }
+            }
+          ],
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "exception_boundary": {
+        "occurred": false
+      },
+      "raw_payload": {
+        "sync_response": {
+          "id": "msg_011Cgiutk45rJeBz6DEN8FTM",
+          "container": null,
+          "content": [
+            {
+              "id": "toolu_018EtfWMrtkZzpRCLjnVFuo9",
+              "caller": {
+                "type": "direct"
+              },
+              "input": {
+                "tenant_id": "accounting_dept"
+              },
+              "name": "query_ledger_balance",
+              "type": "tool_use"
+            }
+          ],
+          "model": "claude-haiku-4-5-20251001",
+          "role": "assistant",
+          "stop_details": null,
+          "stop_reason": "tool_use",
+          "stop_sequence": null,
+          "type": "message",
+          "usage": {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "inference_geo": "not_available",
+            "input_tokens": 611,
+            "output_tokens": 61,
+            "server_tool_use": null,
+            "service_tier": "standard",
+            "speed": "standard"
+          },
+          "diagnostics": null
+        }
+      },
+      "usage": {
+        "prompt_tokens": 611,
+        "completion_tokens": 61,
+        "total_tokens": 672
+      }
+    }
+  }
+}

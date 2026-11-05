@@ -1,0 +1,856 @@
+{
+  "scenario": "stream_compat_traverser",
+  "latest_trace_id": "018c9dc3aa4250000437a8d5fcfc2641",
+  "history_keys": [
+    "018c9dc3aa4250000437a8d5fcfc2641"
+  ],
+  "traces": {
+    "018c9dc3aa4250000437a8d5fcfc2641": {
+      "trace_id": "018c9dc3aa4250000437a8d5fcfc2641",
+      "request_context": {
+        "model": "claude-haiku-4-5-20251001",
+        "provider": "anthropic",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Briefly explain the role of a 'State Traverser' in an LLM gateway using one short sentence. Then, provide a minimal JSON example of a declarative extraction rule that maps the path 'choices.0.delta.content'."
+          }
+        ],
+        "parameters": {
+          "temperature": null,
+          "max_tokens": null,
+          "stream": true
+        }
+      },
+      "network_metrics": {
+        "ttfb_ms": 706.5804579760879,
+        "total_duration_ms": 2764.43
+      },
+      "response_timeline": [
+        {
+          "delta_ms": 706.5804579760879,
+          "chunk": "#"
+        },
+        {
+          "delta_ms": 2042.5640000030398,
+          "chunk": " State Traverser"
+        },
+        {
+          "delta_ms": 14.606542070396245,
+          "chunk": " Role\n\nA State Traverser navigates nested JSON/object structures in LLM responses to extract or validate specific fields at arbitrary depths.\n\n# Minimal JSON Example\n\n```json\n{\n  \"rule\": {\n    \"type\": \"extraction\",\n    \"path\": \"choices.0.delta.content\",\n    \"target\": \"streamed_token\"\n  }\n}\n```\n\nThis rule extracts the content from the first choice's delta object in a streaming response and stores it in the `streamed_token` field.",
+          "finish_reason": "end_turn"
+        }
+      ],
+      "exception_boundary": {
+        "occurred": false
+      },
+      "usage": {
+        "prompt_tokens": 59,
+        "completion_tokens": 125,
+        "total_tokens": 184
+      },
+      "raw_payload": {
+        "stream_chunks": [
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "#"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " State Traverser"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " Role"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "\n\nA State Travers"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "er navig"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "ates nested"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " JSON"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "/"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "object"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " structures in"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " LLM responses"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " to"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " extract or"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " validate"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " specific"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " fields"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " at"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " arbitrary"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " depths"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": ".\n\n#"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " Minimal"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " JSON Example\n\n```"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "json\n{"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "\n  \"rule"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "\": {\n    "
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "\"type\": \""
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "extraction"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "\",\n    \""
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "path\": \"choices"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": ".0.delta"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": ".content\","
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "\n    \"target"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "\": \"stre"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "amed_token"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "\"\n  }"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "\n}\n```"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "\n\nThis rule extra"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "cts the content"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " from"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " the first"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " choice"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "'s"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " delta object"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " in"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " a streaming"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " response"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " and"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " stores"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": " it in the `"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "streamed_token"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant",
+                  "content": "` field."
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant"
+                },
+                "finish_reason": null
+              }
+            ]
+          },
+          {
+            "id": "chatcmpl-018c9dc3",
+            "object": "chat.completion.chunk",
+            "model": "claude-haiku-4-5-20251001",
+            "choices": [
+              {
+                "index": 0,
+                "delta": {
+                  "role": "assistant"
+                },
+                "finish_reason": "end_turn"
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 59,
+              "completion_tokens": 125,
+              "total_tokens": 184
+            }
+          }
+        ]
+      }
+    }
+  }
+}
